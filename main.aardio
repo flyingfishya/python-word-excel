@@ -1,0 +1,49 @@
+import win.ui;
+import console;
+console.open();
+import py3;
+//import tk;
+/*DSG{{*/
+mainForm = win.form(text="pingyu";right=757;bottom=467)
+mainForm.add(
+button={cls="button";text="保存";left=601;top=185;right=675;bottom=226;z=11};
+button2={cls="button";text="gogogo！！";left=601;top=303;right=676;bottom=347;z=12};
+button3={cls="button";text="选择";left=607;top=117;right=666;bottom=142;z=15};
+edit={cls="edit";left=208;top=20;right=535;bottom=87;edge=1;multiline=1;z=1};
+edit2={cls="edit";left=208;top=106;right=535;bottom=180;edge=1;multiline=1;z=2};
+edit3={cls="edit";left=208;top=196;right=535;bottom=270;edge=1;multiline=1;z=3};
+edit4={cls="edit";left=208;top=281;right=535;bottom=355;edge=1;multiline=1;z=4};
+edit5={cls="edit";left=208;top=365;right=535;bottom=439;edge=1;multiline=1;z=5};
+edit6={cls="edit";left=559;top=62;right=719;bottom=111;edge=1;multiline=1;z=14};
+static={cls="static";text="90分以上";left=75;top=44;right=155;bottom=61;transparent=1;z=6};
+static2={cls="static";text="80-89分";left=75;top=130;right=155;bottom=147;transparent=1;z=7};
+static3={cls="static";text="70-79分";left=75;top=223;right=155;bottom=240;transparent=1;z=8};
+static4={cls="static";text="60-69分";left=75;top=312;right=155;bottom=329;transparent=1;z=9};
+static5={cls="static";text="60分以下";left=75;top=390;right=155;bottom=407;transparent=1;z=10};
+static6={cls="static";text="word目录路径";left=598;top=35;right=681;bottom=56;transparent=1;z=13}
+)
+/*}}*/
+import fsys.dlg 
+
+py3.exec($"\res\main.py");
+
+mainForm.button.oncommand = function(id,event){
+	//py3.main.change(py3.export(mainForm),"edit","hello word");
+	py3.main.change(py3.export(mainForm));
+}
+
+
+mainForm.button2.oncommand = function(id,event){
+	py3.main.xieru(py3.export(mainForm));
+}
+
+
+mainForm.button3.oncommand = function(id,event){
+	mainForm.edit6.text = fsys.dlg.opendir()
+	//py3.main.get_path(py3.export(mainForm));
+}
+
+
+mainForm.show();
+return win.loopMessage();
+//C:/Users/ChuanZhou/Desktop/ces/
